@@ -1,0 +1,29 @@
+@model IEnumerable<Resposta>
+
+<!DOCTYPE html>
+<html lang = "pt-br">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-widtd, initial-scale=1.0"> 
+        <link rel="stylesheet" href="/lib/bootstrap5/dist/css/bootstrap.css">
+        <title>Enquete ASPNET :: Resultado Parcial</title>
+    </head>
+        
+    <body>
+        <div class = "container">
+            <h1>Enquete produzida para estudos com AspNetCore MVC usando VSCODE</h1>
+            <h2>Você teria coragem de dar o seu cuzinho para mim?</h2>
+            @foreach (Resposta r in Model)
+            {
+                <p>
+                    @(r.Nome): @(r.Sim.Value ? "Sim" : "Não")
+                </p>
+            }
+            <p>
+                <a asp-action="Index" class = "btn btn-primary">Voltar ao Inicio</a>
+            </p>
+        </div>
+        
+    </body>
+</html>
